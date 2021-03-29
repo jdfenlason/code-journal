@@ -1,25 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Journal</title>
-  <link rel="icon" href="images/favicon.ico">
-  <link
-    rel="stylesheet"
-    crossorigin="anonymous"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header>
-  </header>
-  <main>
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Journal</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="column-full"><h1>Code Journal</h1></header>
+    <main>
+      <div class="container">
+        <div data-view="entry-form">
+          <form data-view="entry-form">
+            <h2>New Entry</h2>
+            <label for="user-image"></label>
+            <input
+              required
+              name="user-image"
+              type="image"
+              id="user-image"
+              placeholder="images/placeholder-image-square.jpg"
+            />
+            <label for="user-title">Title</label>
+            <input
+              required
+              name="user-title"
+              type="text"
+              id="user-title"
+              placeholder="Ada Lovelace"
+            />
+            <label for="user-photoUrl">PhotoUrl</label>
+            <input
+              required
+              type="text"
+              id="user-photoUrl"
+              placeholder="Ada Lovelace.png"
+            />
+            <label for="user-notes">Notes</label>
+            <textarea
+              required
+              rows="5"
+              type="text"
+              id="user-notes"
+              placeholder="notes"
+            ></textarea>
+            <div class="form-submit">
+              <button type="submit">SAVE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
+

@@ -1,3 +1,7 @@
+body {
+  background-color: #eceaec;
+}
+
 .hidden {
   display: none !important;
 }
@@ -6,6 +10,7 @@
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  background-color: grey;
 }
 
 .row {
@@ -16,6 +21,24 @@
 .column-full,
 .column-half {
   width: 100%;
+}
+
+header {
+  background-color: #562b81;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background-color: #562b81;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+  margin-right: 4px;
+  margin-left: 4px;
+  border-radius: 4px;
 }
 
 @media screen and (min-width: 768px) {
