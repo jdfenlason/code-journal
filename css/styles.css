@@ -22,6 +22,17 @@ input {
   height: 2.5rem;
 }
 
+input,
+textarea {
+  border: 1px solid #b6b6b6;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #562b81;
+  outline: none;
+}
+
 .image-container {
   margin-bottom: 0.65rem;
 }
@@ -35,10 +46,12 @@ input {
 .save-btn {
   background-color: #562b81;
   color: white;
-  width: 60px;
-  padding-top: 0.05rem;
-  padding-bottom: 6px;
+  width: 5.25rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
   font-family: "Open Sans", sans-serif;
+  border-radius: 0.3rem;
+  font-size: 1em;
 }
 
 .column-full.form-submit {
@@ -52,4 +65,6 @@ header {
   color: white;
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  padding-left: 1.425rem;
 }
