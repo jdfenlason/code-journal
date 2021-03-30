@@ -1,16 +1,60 @@
 body {
   background-color: #eceaec;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
 }
 
 .hidden {
   display: none !important;
 }
 
+.journal-header {
+  display: flex;
+  align-items: center;
+}
+
 .container {
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  background-color: grey;
+}
+
+label,
+input,
+textarea {
+  border-radius: 0.25rem;
+  margin-bottom: 0.65rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+input {
+  height: 2.5rem;
+}
+
+.image-container {
+  margin-bottom: 0.65rem;
+}
+
+.image-url {
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.save-btn {
+  background-color: #562b81;
+  color: white;
+  width: 60px;
+  padding-top: 0.05rem;
+  padding-bottom: 6px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.column-full.form-submit {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  max-width: 575px;
 }
 
 .row {
@@ -21,24 +65,20 @@ body {
 .column-full,
 .column-half {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-full {
+  display: flex;
+  justify-content: flex-end;
 }
 
 header {
   background-color: #562b81;
   color: white;
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-button {
-  background-color: #562b81;
-  color: white;
-  font-size: 14px;
-  padding: 10px;
-  margin-right: 4px;
-  margin-left: 4px;
-  border-radius: 4px;
 }
 
 @media screen and (min-width: 768px) {

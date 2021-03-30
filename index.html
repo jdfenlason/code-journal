@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Journal</title>
     <link rel="icon" href="images/favicon.ico" />
-    <link
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">    <link
       rel="stylesheet"
       crossorigin="anonymous"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -16,45 +19,51 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <header class="column-full"><h1>Code Journal</h1></header>
+    <header>
+      <div class="container column-half">
+          <h2>Code Journal</h2>
+      </div>
+    </header>
+
     <main>
       <div class="container">
         <div data-view="entry-form">
-          <form data-view="entry-form">
-            <h2>New Entry</h2>
-            <label for="user-image"></label>
-            <input
-              required
-              name="user-image"
-              type="image"
-              id="user-image"
-              placeholder="images/placeholder-image-square.jpg"
-            />
-            <label for="user-title">Title</label>
-            <input
-              required
-              name="user-title"
-              type="text"
-              id="user-title"
-              placeholder="Ada Lovelace"
-            />
-            <label for="user-photoUrl">PhotoUrl</label>
-            <input
-              required
-              type="text"
-              id="user-photoUrl"
-              placeholder="Ada Lovelace.png"
-            />
-            <label for="user-notes">Notes</label>
-            <textarea
-              required
-              rows="5"
-              type="text"
-              id="user-notes"
-              placeholder="notes"
-            ></textarea>
-            <div class="form-submit">
-              <button type="submit">SAVE</button>
+          <form class="form-entry">
+            <div class="column-full">
+              <h1>New Entry</h1>
+            </div>
+            <div class="row">
+              <div class="image-container column-half">
+                <img
+                  class = "image-url"
+                  src="images/placeholder-image-square.jpg"
+                  alt="placeholder img"
+                />
+              </div>
+
+              <div class="column-half">
+                <label for="user-title" >Title</label>
+                <input required name="user-title" type="text" id="user-title" />
+                <label for="user-photoUrl">Photo URL</label>
+                <input required type="url" id="user-photoUrl" name="photo" />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="column-full">
+                <label for="user-notes">Notes</label>
+                <textarea
+                  required
+                  name="notes"
+                  rows="7"
+                  type="text"
+                  id="user-notes"
+                ></textarea>
+              </div>
+
+              <div class="column-full form-submit">
+                <button class="save-btn" type="submit">SAVE</button>
+              </div>
             </div>
           </form>
         </div>
@@ -64,4 +73,3 @@
     <script src="js/main.js"></script>
   </body>
 </html>
-
