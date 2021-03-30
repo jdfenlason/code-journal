@@ -1,60 +1,12 @@
-body {
-  background-color: #eceaec;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 700;
-}
 
 .hidden {
   display: none !important;
-}
-
-.journal-header {
-  display: flex;
-  align-items: center;
 }
 
 .container {
   max-width: 575px;
   margin: 0 auto;
   padding: 0 1.5rem;
-}
-
-label,
-input,
-textarea {
-  border-radius: 0.25rem;
-  margin-bottom: 0.65rem;
-  font-family: "Open Sans", sans-serif;
-}
-
-input {
-  height: 2.5rem;
-}
-
-.image-container {
-  margin-bottom: 0.65rem;
-}
-
-.image-url {
-  height: 350px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.save-btn {
-  background-color: #562b81;
-  color: white;
-  width: 60px;
-  padding-top: 0.05rem;
-  padding-bottom: 6px;
-  font-family: "Open Sans", sans-serif;
-}
-
-.column-full.form-submit {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  max-width: 575px;
 }
 
 .row {
@@ -72,13 +24,6 @@ input {
 .column-full {
   display: flex;
   justify-content: flex-end;
-}
-
-header {
-  background-color: #562b81;
-  color: white;
-  display: flex;
-  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
