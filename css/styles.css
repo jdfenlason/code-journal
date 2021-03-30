@@ -45,6 +45,13 @@ textarea:focus {
   object-fit: cover;
 }
 
+.entries-nav-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 1.5em;
+}
+
 .new-button,
 .save-btn {
   background-color: #562b81;
@@ -56,6 +63,11 @@ textarea:focus {
   border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
+}
+
+.new-button:hover,
+.save-btn:hover {
+  cursor: pointer;
 }
 
 .column-full.form-submit {
@@ -80,4 +92,9 @@ header {
 
 .list-entries {
   list-style: none;
+}
+
+.entries-header {
+  justify-content: space-between;
+  align-items: center;
 }
