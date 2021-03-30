@@ -16,13 +16,10 @@
 .column-full,
 .column-half {
   width: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .column-full {
   display: flex;
-  justify-content: flex-end;
 }
 
 @media screen and (min-width: 768px) {
@@ -37,5 +34,9 @@
 
   .column-half {
     width: 50%;
+  }
+
+  .header-container {
+    max-width: 550px;
   }
 }

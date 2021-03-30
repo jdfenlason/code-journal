@@ -4,9 +4,11 @@ body {
   font-weight: 700;
 }
 
-.journal-header {
+.header-container {
   display: flex;
   align-items: center;
+  margin: 0 auto;
+  max-width: 620px;
 }
 
 label,
@@ -19,7 +21,7 @@ textarea {
 }
 
 input {
-  height: 2.5rem;
+  height: 2rem;
 }
 
 input,
@@ -35,10 +37,10 @@ textarea:focus {
 
 .image-container {
   margin-bottom: 0.65rem;
+  padding: 0 1.5rem;
 }
 
 .image-url {
-  height: 350px;
   width: 100%;
   object-fit: cover;
 }
@@ -52,15 +54,25 @@ textarea:focus {
   font-family: "Open Sans", sans-serif;
   border-radius: 0.3rem;
   font-size: 1em;
+  margin-top: 0.85rem;
 }
 
 .column-full.form-submit {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  margin-right: 1.45rem;
 }
 
 header {
   background-color: #562b81;
   color: white;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 685px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }

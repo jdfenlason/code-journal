@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code Journal</title>
     <link rel="icon" href="images/favicon.ico" />
-   
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">    <link
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       crossorigin="anonymous"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
@@ -19,29 +23,29 @@
   </head>
   <body>
     <header>
-      <div class="container column-half">
-          <h2>Code Journal</h2>
+      <div class="header-container column-half">
+        <h2>Code Journal</h2>
       </div>
     </header>
 
     <main>
-      <div class="container">
+      <div class="form-container">
         <div data-view="entry-form">
           <form class="journal-entry-form">
-            <div class="column-full">
+            <div class="column-full form-container">
               <h1>New Entry</h1>
             </div>
             <div class="row">
               <div class="image-container column-half">
                 <img
-                  class = "image-url"
+                  class="image-url"
                   src="images/placeholder-image-square.jpg"
                   alt="placeholder img"
                 />
               </div>
 
-              <div class="column-half">
-                <label for="user-title" >Title</label>
+              <div class="column-half form-container">
+                <label for="user-title">Title</label>
                 <input required name="title" type="text" id="user-title" />
                 <label for="user-photoUrl">Photo URL</label>
                 <input required type="url" id="user-photoUrl" name="photo" />
@@ -49,7 +53,7 @@
             </div>
 
             <div class="row">
-              <div class="column-full">
+              <div class="column-full form-container">
                 <label for="user-notes">Notes</label>
                 <textarea
                   required
