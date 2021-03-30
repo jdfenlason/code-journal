@@ -63,8 +63,4 @@ textarea:focus {
 header {
   background-color: #562b81;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-left: 1.425rem;
 }

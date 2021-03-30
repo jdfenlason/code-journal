@@ -38,10 +38,4 @@
   .column-half {
     width: 50%;
   }
-
-  header {
-    padding-left: 1.425rem;
-    align-items: center;
-    justify-content: space-evenly;
-  }
 }
