@@ -1,3 +1,4 @@
+
 /* global data */
 /* exported data */
 var $imageUrl = document.querySelector('.image-url');
@@ -22,6 +23,7 @@ function saveEntry(event) {
   data.entries.unshift(userInput);
   $newEntry.reset();
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
+
   var newNode = createEntry(data.entries[0]);
   $newUlEntries.prepend(newNode);
   viewEntries();
@@ -100,3 +102,7 @@ if (data.view === 'entry-form') {
 }
 
 window.addEventListener('DOMContentLoaded', entryLoad);
+
+
+$newEntry.addEventListener('submit', saveEntry);
+

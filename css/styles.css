@@ -44,6 +44,7 @@ textarea:focus {
   object-fit: cover;
 }
 
+
 .entries-nav-link {
   color: white;
   text-decoration: none;
@@ -62,6 +63,7 @@ textarea:focus {
   border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
+
   border: 1px  #562b81 solid;
 }
 
@@ -85,6 +87,7 @@ header {
 .form-container {
   display: flex;
   flex-direction: column;
+
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -101,3 +104,9 @@ header {
   align-items: center;
   padding-bottom: 1rem;
 }
+
+  max-width: 685px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
