@@ -7,8 +7,7 @@ body {
 .header-container {
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  max-width: 620px;
+  margin-left: 3rem;
 }
 
 label,
@@ -45,6 +44,15 @@ textarea:focus {
   object-fit: cover;
 }
 
+
+.entries-nav-link {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 1.2em;
+}
+
+.new-button,
 .save-btn {
   background-color: #562b81;
   color: white;
@@ -55,6 +63,13 @@ textarea:focus {
   border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
+
+  border: 1px  #562b81 solid;
+}
+
+.new-button:hover,
+.save-btn:hover {
+  cursor: pointer;
 }
 
 .column-full.form-submit {
@@ -72,7 +87,26 @@ header {
 .form-container {
   display: flex;
   flex-direction: column;
+
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.list-entries {
+  list-style: none;
+  padding-bottom: 1.15rem;
+  margin: 0;
+  padding-left: 0;
+}
+
+.entries-header {
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
   max-width: 685px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+

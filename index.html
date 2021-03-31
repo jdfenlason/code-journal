@@ -23,14 +23,27 @@
   </head>
   <body>
     <header>
+
+      <div class="header-container column-half">
+        <div class="">
+        <h2>Code Journal</h2>
+      </div>
+      <a href="" class="entries-nav-link">Entries</a>
+    </div>
+
       <div class="header-container column-half">
         <h2>Code Journal</h2>
       </div>
+
     </header>
 
     <main>
       <div class="form-container">
+
+        <div class ="view-entry-form" data-view="entry-form">
+
         <div data-view="entry-form">
+
           <form class="journal-entry-form">
             <div class="column-full form-container">
               <h1>New Entry</h1>
@@ -70,6 +83,19 @@
             </div>
           </form>
         </div>
+
+        <div class="entries-view" data-view="entries">
+          <div class="form-container">
+            <div class="column-full row entries-header">
+              <h1>Entries</h1>
+              <a href=""> <button class="new-button">NEW </button>
+
+              </a>
+            </div>
+            <ul class="list-entries"></ul>
+          </div>
+        </div>
+
       </div>
     </main>
     <script src="js/data.js"></script>
