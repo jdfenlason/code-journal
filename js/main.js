@@ -3,14 +3,30 @@
 var $imageUrl = document.querySelector('.image-url');
 var $userPhotoUrl = document.querySelector('#user-photoUrl');
 var $newEntry = document.querySelector('.journal-entry-form');
+var $newEntryBtn = document.querySelector('.new-button');
+var $navAnchor = document.querySelector('.entries-nav-link');
+var $viewEntryForm = document.querySelector('.view-entry-form');
+var $viewEntries = document.querySelector('.entries-view');
+var $newUlEntries = document.querySelector('.list-entries');
+
+$userPhotoUrl.addEventListener('input', entryImageUpdate);
+$newEntry.addEventListener('submit', saveEntry);
+$newEntryBtn.addEventListener('click', viewEntryForm);
+$navAnchor.addEventListener('click', viewEntries);
+window.addEventListener('DOMContentLoaded', entryLoad);
+
+if (data.view === 'entry-form') {
+  $viewEntryForm.className = 'view-entry-form';
+  $viewEntries.className = 'hidden entries-view';
+} else {
+  $viewEntryForm.className = 'hidden view-entry-form';
+  $viewEntries.className = 'entries-view';
+}
 
 function entryImageUpdate(event) {
   var $photoInputValue = event.target.value;
   $imageUrl.setAttribute('src', $photoInputValue);
 }
-
-$userPhotoUrl.addEventListener('input', entryImageUpdate);
-
 function saveEntry(event) {
   event.preventDefault();
   var userInput = {};
@@ -26,9 +42,6 @@ function saveEntry(event) {
   $newUlEntries.prepend(newNode);
   viewEntries();
 }
-$newEntry.addEventListener('submit', saveEntry);
-
-var $newUlEntries = document.querySelector('.list-entries');
 
 function createEntry(entry) {
   var newList = document.createElement('li');
@@ -71,11 +84,6 @@ function entryLoad(event) {
   }
 }
 
-var $newEntryBtn = document.querySelector('.new-button');
-var $navAnchor = document.querySelector('.entries-nav-link');
-var $viewEntryForm = document.querySelector('.view-entry-form');
-var $viewEntries = document.querySelector('.entries-view');
-
 function viewEntryForm(event) {
   $viewEntryForm.className = 'view-entry-form';
   $viewEntries.className = ' hidden entries-view';
@@ -87,16 +95,3 @@ function viewEntries(event) {
   $viewEntries.className = 'entries-view';
   data.view = 'entries';
 }
-
-$newEntryBtn.addEventListener('click', viewEntryForm);
-$navAnchor.addEventListener('click', viewEntries);
-
-if (data.view === 'entry-form') {
-  $viewEntryForm.className = 'view-entry-form';
-  $viewEntries.className = 'hidden entries-view';
-} else {
-  $viewEntryForm.className = 'hidden view-entry-form';
-  $viewEntries.className = 'entries-view';
-}
-
-window.addEventListener('DOMContentLoaded', entryLoad);
