@@ -62,7 +62,7 @@ textarea:focus {
   border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
-  border: 1px  #562b81 solid;
+  border: 1px #562b81 solid;
 }
 
 .fas {
@@ -70,6 +70,16 @@ textarea:focus {
   font-size: 1.5rem;
 }
 
+.delete-entry {
+  background-color: #eceaec;
+  text-decoration: underline;
+  color: #dc2626;
+  border: none;
+}
+
+.confirm-button:hover,
+.cancel-button:hover,
+.delete-entry:hover,
 .fas:hover,
 .new-button:hover,
 .save-btn:hover {
@@ -79,7 +89,8 @@ textarea:focus {
 .column-full.form-submit {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   margin-right: 1.45rem;
 }
 
