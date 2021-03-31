@@ -62,6 +62,7 @@ textarea:focus {
   border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
+  border: 1px  #562b81 solid;
 }
 
 .new-button:hover,

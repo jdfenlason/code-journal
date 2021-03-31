@@ -65,9 +65,9 @@ function createEntry(entry) {
 }
 
 function entryLoad(event) {
-  for (var i = data.entries.length - 1; i >= 0; i--) {
+  for (var i = 0; i < data.entries.length; i++) {
     var $entryNode = createEntry(data.entries[i]);
-    $newUlEntries.prepend($entryNode);
+    $newUlEntries.append($entryNode);
   }
 }
 
