@@ -1,3 +1,4 @@
+
 /* global data */
 /* exported data */
 var $imageUrl = document.querySelector('.image-url');
