@@ -51,14 +51,11 @@ function saveEntry(event) {
         data.entries[x] = data.editing;
         break;
       }
-    }
-    var editEntryItem = createEntry(data.editing);
-    var $journalNode = document.querySelectorAll('.journal-entry');
-
-    for (var z = 0; z < $journalNode.length; z++) {
-      journalEntryId = $journalNode[z].getAttribute('data-entry-id');
+      var editEntryItem = createEntry(data.editing);
+      var $journalNode = document.querySelectorAll('.journal-entry');
+      journalEntryId = $journalNode[x].getAttribute('data-entry-id');
       if (journalEntryId === data.editing.entryId.toString()) {
-        $journalNode[z].replaceWith(editEntryItem);
+        $journalNode[x].replaceWith(editEntryItem);
         break;
       }
     }
