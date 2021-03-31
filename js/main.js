@@ -1,3 +1,4 @@
+
 /* global data */
 /* exported data */
 var $imageUrl = document.querySelector('.image-url');
@@ -55,8 +56,14 @@ function saveEntry(event) {
     }
   }
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
+
   $newEntry.reset();
   data.editing = null;
+
+
+  var newNode = createEntry(data.entries[0]);
+  $newUlEntries.prepend(newNode);
+
   viewEntries();
 }
 
@@ -132,6 +139,7 @@ function viewEditForm(event) {
   $formheader.textContent = 'Edit Entry';
 }
 
+
 function editEntry(event) {
   if (event.target.matches('i')) {
     viewEditForm();
@@ -148,3 +156,10 @@ function editEntry(event) {
     }
   }
 }
+
+window.addEventListener('DOMContentLoaded', entryLoad);
+
+
+$newEntry.addEventListener('submit', saveEntry);
+
+
