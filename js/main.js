@@ -47,6 +47,7 @@ function saveEntry(event) {
 function createEntry(entry) {
   var newList = document.createElement('li');
   newList.setAttribute('class', 'list-entries');
+  newList.setAttribute('data-entry-id', entry.entryId);
 
   var row = document.createElement('div');
   row.setAttribute('class', 'row');
@@ -61,14 +62,21 @@ function createEntry(entry) {
   img.setAttribute('src', entry.photo);
   img.setAttribute('class', 'image-url');
 
+  var entryheader = document.createElement('div');
+  entryheader.setAttribute('class', 'entry-header');
   var h2 = document.createElement('h2');
   h2.setAttribute('class', 'post-title');
   h2.textContent = entry.title;
 
+  var editIcon = document.createElement('i');
+  editIcon.setAttribute('class', 'fas fa-pen');
+
   var pElement = document.createElement('p');
   pElement.textContent = entry.notes;
 
-  columnhalf2.appendChild(h2);
+  entryheader.appendChild(h2);
+  entryheader.appendChild(editIcon);
+  columnhalf2.appendChild(entryheader);
   columnhalf2.appendChild(pElement);
   columnhalf1.appendChild(img);
   row.appendChild(columnhalf1);
