@@ -7,7 +7,7 @@ body {
 .header-container {
   display: flex;
   align-items: center;
-  margin-left: 2.3rem;
+  margin-left: 3rem;
 }
 
 label,
@@ -91,15 +91,12 @@ header {
 .list-entries {
   list-style: none;
   padding-bottom: 1.15rem;
+  margin: 0;
+  padding-left: 0;
 }
 
 .entries-header {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
-}
-
-ul {
-  margin-inline-start: 0;
-  padding-inline-start: 0;
 }

@@ -24,6 +24,7 @@ function saveEntry(event) {
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
   var newNode = createEntry(data.entries[0]);
   $newUlEntries.prepend(newNode);
+  viewEntries();
 }
 $newEntry.addEventListener('submit', saveEntry);
 
@@ -68,6 +69,34 @@ function entryLoad(event) {
     var $entryNode = createEntry(data.entries[i]);
     $newUlEntries.prepend($entryNode);
   }
+}
+
+var $newEntryBtn = document.querySelector('.new-button');
+var $navAnchor = document.querySelector('.entries-nav-link');
+var $viewEntryForm = document.querySelector('.view-entry-form');
+var $viewEntries = document.querySelector('.entries-view');
+
+function viewEntryForm(event) {
+  $viewEntryForm.className = 'view-entry-form';
+  $viewEntries.className = ' hidden entries-view';
+  data.view = 'entry-form';
+}
+
+function viewEntries(event) {
+  $viewEntryForm.className = 'hidden view-entry-form';
+  $viewEntries.className = 'entries-view';
+  data.view = 'entries';
+}
+
+$newEntryBtn.addEventListener('click', viewEntryForm);
+$navAnchor.addEventListener('click', viewEntries);
+
+if (data.view === 'entry-form') {
+  $viewEntryForm.className = 'view-entry-form';
+  $viewEntries.className = 'hidden entries-view';
+} else {
+  $viewEntryForm.className = 'hidden view-entry-form';
+  $viewEntries.className = 'entries-view';
 }
 
 window.addEventListener('DOMContentLoaded', entryLoad);
