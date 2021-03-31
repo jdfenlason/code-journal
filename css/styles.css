@@ -67,6 +67,12 @@ textarea:focus {
   border: 1px  #562b81 solid;
 }
 
+.fas {
+  color: #562b81;
+  font-size: 1.5rem;
+}
+
+.fas:hover,
 .new-button:hover,
 .save-btn:hover {
   cursor: pointer;
@@ -103,6 +109,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
+}
+
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
   max-width: 685px;
