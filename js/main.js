@@ -49,14 +49,12 @@ function saveEntry(event) {
     for (var x = 0; x < data.entries.length; x++) {
       if (data.entries[x].entryId === data.editing.entryId) {
         data.entries[x] = data.editing;
-        break;
       }
       var editEntryItem = createEntry(data.editing);
       var $journalNode = document.querySelectorAll('.journal-entry');
       journalEntryId = $journalNode[x].getAttribute('data-entry-id');
       if (journalEntryId === data.editing.entryId.toString()) {
         $journalNode[x].replaceWith(editEntryItem);
-        break;
       }
     }
   }
@@ -150,7 +148,6 @@ function editEntry(event) {
         $newEntry.elements.photo.value = data.editing.photo;
         $imageUrl.setAttribute('src', data.editing.photo);
         $newEntry.elements.notes.value = data.editing.notes;
-        break;
       }
     }
   }
