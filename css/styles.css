@@ -7,8 +7,7 @@ body {
 .header-container {
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  max-width: 620px;
+  margin-left: 2.3rem;
 }
 
 label,
@@ -49,7 +48,7 @@ textarea:focus {
   color: white;
   text-decoration: none;
   margin-left: 2rem;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .new-button,
@@ -85,16 +84,22 @@ header {
 .form-container {
   display: flex;
   flex-direction: column;
-  max-width: 685px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 .list-entries {
   list-style: none;
+  padding-bottom: 1.15rem;
 }
 
 .entries-header {
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 1rem;
+}
+
+ul {
+  margin-inline-start: 0;
+  padding-inline-start: 0;
 }

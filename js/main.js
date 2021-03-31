@@ -22,60 +22,45 @@ function saveEntry(event) {
   data.entries.unshift(userInput);
   $newEntry.reset();
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
+  var newNode = createEntry(data.entries[0]);
+  $newUlEntries.prepend(newNode);
 }
 $newEntry.addEventListener('submit', saveEntry);
 
 var $newUlEntries = document.querySelector('.list-entries');
 
 function createEntry(entry) {
-  var $newliJournalEntry = document.createElement('li');
-  $newliJournalEntry.setAttribute('class', 'journal-entry');
+  var newList = document.createElement('li');
+  newList.setAttribute('class', 'list-entries');
 
-  var $row = document.createElement('div');
-  $row.setAttribute('class', 'row');
-  $newliJournalEntry.appendChild($row);
+  var row = document.createElement('div');
+  row.setAttribute('class', 'row');
 
-  var $divChalf = document.createElement('div');
-  $divChalf.setAttribute('class', 'column-half');
-  $row.appendChild($divChalf);
+  var columnhalf1 = document.createElement('div');
+  columnhalf1.setAttribute('class', 'column-half');
 
-  var $divImageContainer = document.createElement('div');
-  $divImageContainer.setAttribute('class', 'image-container');
-  $divChalf.appendChild($divImageContainer);
+  var columnhalf2 = document.createElement('div');
+  columnhalf2.setAttribute('class', 'column-half');
 
-  var $entryImage = document.createElement('img');
-  $entryImage.setAttribute('class', 'entry-image');
-  $entryImage.setAttribute('src', 'entry.photo');
-  $entryImage.setAttribute('alt', 'Code Journal entry image');
-  $divImageContainer.appendChild($entryImage);
+  var img = document.createElement('img');
+  img.setAttribute('src', entry.photo);
+  img.setAttribute('class', 'image-url');
 
-  var $chalf2 = document.createElement('div');
-  $chalf2.setAttribute('class', 'column-half');
-  $row.appendChild($chalf2);
+  var h2 = document.createElement('h2');
+  h2.setAttribute('class', 'post-title');
+  h2.textContent = entry.title;
 
-  var $textContainer = document.createElement('div');
-  $textContainer.setAttribute('class', 'text-container');
-  $chalf2.appendChild($textContainer);
+  var pElement = document.createElement('p');
+  pElement.textContent = entry.notes;
 
-  var $entryTitle = document.createElement('div');
-  $entryTitle.setAttribute('class', 'entry-title');
-  $textContainer.appendChild($entryTitle);
+  columnhalf2.appendChild(h2);
+  columnhalf2.appendChild(pElement);
+  columnhalf1.appendChild(img);
+  row.appendChild(columnhalf1);
+  row.appendChild(columnhalf2);
+  newList.appendChild(row);
 
-  var $headingH2 = document.createElement('h2');
-  var $entryHeading = document.createTextNode(entry.title);
-  $headingH2.appendChild($entryHeading);
-  $entryTitle.appendChild($headingH2);
-
-  var $paragraphContainer = document.createElement('div');
-  $paragraphContainer.setAttribute('class', 'entry-paragraph');
-  $textContainer.appendChild($paragraphContainer);
-
-  var $paragraphEntry = document.createElement('div');
-  var $paragraphText = document.createElement('p');
-  $paragraphEntry.appendChild($paragraphText);
-  $textContainer.appendChild($paragraphEntry);
-
-  return $newliJournalEntry;
+  return newList;
 }
 
 function entryLoad(event) {
@@ -85,5 +70,4 @@ function entryLoad(event) {
   }
 }
 
-createEntry();
-entryLoad();
+window.addEventListener('DOMContentLoaded', entryLoad);
