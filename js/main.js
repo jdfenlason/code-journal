@@ -10,12 +10,17 @@ var $viewEntries = document.querySelector('.entries-view');
 var $newUlEntries = document.querySelector('.list-entries');
 var $formheader = document.querySelector('.form-header');
 var dataEntryId = null;
+var $deleteEntryBtn = document.querySelector('.delete-entry');
+var $viewModal = document.querySelector('.view-modal');
+var $cancelbutton = document.querySelector('.cancel-button');
+var $confirmbutton = document.querySelector('.confirm-button');
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
 $navAnchor.addEventListener('click', viewEntries);
 $newUlEntries.addEventListener('click', editEntry);
 window.addEventListener('DOMContentLoaded', entryLoad);
+$deleteEntryBtn.addEventListener('click', deletModalView);
 
 if (data.view === 'entry-form') {
   $viewEntryForm.className = 'view-entry-form';
@@ -148,3 +153,16 @@ function editEntry(event) {
     }
   }
 }
+
+function deletModalView(event) {
+  event.preventDefault();
+  $viewModal.className = 'view-modal';
+}
+
+$cancelbutton.addEventListener('click', function (event) {
+  $viewModal.className = 'hidden view-modal';
+});
+
+$confirmbutton.addEventListener('click', function (event) {
+
+});
