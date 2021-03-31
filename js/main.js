@@ -1,4 +1,3 @@
-
 /* global data */
 /* exported data */
 var $imageUrl = document.querySelector('.image-url');
@@ -9,17 +8,14 @@ var $navAnchor = document.querySelector('.entries-nav-link');
 var $viewEntryForm = document.querySelector('.view-entry-form');
 var $viewEntries = document.querySelector('.entries-view');
 var $newUlEntries = document.querySelector('.list-entries');
-
+var $formheader = document.querySelector('.form-header');
+var dataEntryId = null;
+var journalEntryId = null;
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
 $navAnchor.addEventListener('click', viewEntries);
-
-$newUlEntries.addEventListener('click', function (event) {
-  // eslint-disable-next-line no-console
-  console.log('entries here');
-});
-
+$newUlEntries.addEventListener('click', editEntry);
 window.addEventListener('DOMContentLoaded', entryLoad);
 
 if (data.view === 'entry-form') {
@@ -36,23 +32,46 @@ function entryImageUpdate(event) {
 }
 function saveEntry(event) {
   event.preventDefault();
-  var userInput = {};
-  userInput.title = $newEntry.elements.title.value;
-  userInput.photo = $newEntry.elements.photo.value;
-  userInput.notes = $newEntry.elements.notes.value;
-  userInput.entryId = data.nextEntryId;
-  data.nextEntryId++;
-  data.entries.unshift(userInput);
-  $newEntry.reset();
+  if (data.editing === null) {
+    var userInput = {};
+    userInput.title = $newEntry.elements.title.value;
+    userInput.photo = $newEntry.elements.photo.value;
+    userInput.notes = $newEntry.elements.notes.value;
+    data.entries.unshift(userInput);
+    userInput.entryId = data.nextEntryId;
+    data.nextEntryId++;
+    var newNode = createEntry(data.entries[0]);
+    $newUlEntries.append(newNode);
+  } else {
+    data.editing.title = $newEntry.elements.title.value;
+    data.editing.photo = $newEntry.elements.photo.value;
+    data.editing.notes = $newEntry.elements.notes.value;
+    for (var x = 0; x < data.entries.length; x++) {
+      if (data.entries[x].entryId === data.editing.entryId) {
+        data.entries[x] = data.editing;
+        break;
+      }
+    }
+    var editEntryItem = createEntry(data.editing);
+    var $journalNode = document.querySelectorAll('.journal-entry');
+
+    for (var z = 0; z < $journalNode.length; z++) {
+      journalEntryId = $journalNode[z].getAttribute('data-entry-id');
+      if (journalEntryId === data.editing.entryId.toString()) {
+        $journalNode[z].replaceWith(editEntryItem);
+        break;
+      }
+    }
+  }
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
-  var newNode = createEntry(data.entries[0]);
-  $newUlEntries.prepend(newNode);
+  $newEntry.reset();
+  data.editing = null;
   viewEntries();
 }
 
 function createEntry(entry) {
   var newList = document.createElement('li');
-  newList.setAttribute('class', 'list-entries');
+  newList.setAttribute('class', 'journal-entry');
   newList.setAttribute('data-entry-id', entry.entryId);
 
   var row = document.createElement('div');
@@ -103,10 +122,39 @@ function viewEntryForm(event) {
   $viewEntryForm.className = 'view-entry-form';
   $viewEntries.className = ' hidden entries-view';
   data.view = 'entry-form';
+  $formheader.textContent = 'New Entry';
+  data.editing = null;
 }
 
 function viewEntries(event) {
   $viewEntryForm.className = 'hidden view-entry-form';
   $viewEntries.className = 'entries-view';
   data.view = 'entries';
+  $newEntry.reset();
+  $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
+  data.editing = null;
+}
+
+function viewEditForm(event) {
+  $viewEntryForm.className = 'view-entry-form';
+  $viewEntries.className = 'hidden entries-view';
+  $formheader.textContent = 'Edit Entry';
+}
+
+function editEntry(event) {
+  if (event.target.matches('i')) {
+    viewEditForm();
+    var closestEntry = event.target.closest('.journal-entry');
+    dataEntryId = closestEntry.getAttribute('data-entry-id');
+    for (var k = 0; k < data.entries.length; k++) {
+      if (data.entries[k].entryId.toString() === dataEntryId) {
+        data.editing = data.entries[k];
+        $newEntry.elements.title.value = data.editing.title;
+        $newEntry.elements.photo.value = data.editing.photo;
+        $imageUrl.setAttribute('src', data.editing.photo);
+        $newEntry.elements.notes.value = data.editing.notes;
+        break;
+      }
+    }
+  }
 }
