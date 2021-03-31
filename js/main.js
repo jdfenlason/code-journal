@@ -125,6 +125,7 @@ function viewEntryForm(event) {
 function viewEntries(event) {
   $viewEntryForm.className = 'hidden view-entry-form';
   $viewEntries.className = 'entries-view';
+  $viewModal.className = 'hidden view-modal';
   data.view = 'entries';
   $newEntry.reset();
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
