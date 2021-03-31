@@ -14,6 +14,12 @@ $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
 $navAnchor.addEventListener('click', viewEntries);
+
+$newUlEntries.addEventListener('click', function (event) {
+  // eslint-disable-next-line no-console
+  console.log('entries here');
+});
+
 window.addEventListener('DOMContentLoaded', entryLoad);
 
 if (data.view === 'entry-form') {
