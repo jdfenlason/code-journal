@@ -10,7 +10,6 @@ var $viewEntries = document.querySelector('.entries-view');
 var $newUlEntries = document.querySelector('.list-entries');
 var $formheader = document.querySelector('.form-header');
 var dataEntryId = null;
-var journalEntryId = null;
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
@@ -49,11 +48,8 @@ function saveEntry(event) {
     for (var x = 0; x < data.entries.length; x++) {
       if (data.entries[x].entryId === data.editing.entryId) {
         data.entries[x] = data.editing;
-      }
-      var editEntryItem = createEntry(data.editing);
-      var $journalNode = document.querySelectorAll('.journal-entry');
-      journalEntryId = $journalNode[x].getAttribute('data-entry-id');
-      if (journalEntryId === data.editing.entryId.toString()) {
+        var editEntryItem = createEntry(data.editing);
+        var $journalNode = document.querySelectorAll('.journal-entry');
         $journalNode[x].replaceWith(editEntryItem);
       }
     }
