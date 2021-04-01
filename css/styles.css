@@ -56,10 +56,6 @@ textarea:focus {
   background-color: #562b81;
   color: white;
   width: 5.25rem;
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
-  font-family: "Open Sans", sans-serif;
-  border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
   border: 1px #562b81 solid;
@@ -75,6 +71,30 @@ textarea:focus {
   text-decoration: underline;
   color: #dc2626;
   border: none;
+}
+
+.cancel-button {
+  background-color: #b6b6b6;
+  border: 1px solid #b6b6b6;
+}
+
+.confirm-button {
+  background-color: #dc2626;
+  border: 1px solid #dc2626;
+  color: white;
+}
+
+.delete-entry,
+.new-button,
+.save-btn,
+.confirm-button,
+.cancel-button {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 0.3rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 .confirm-button:hover,
@@ -123,4 +143,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.modal-container {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  max-width: 576px;
 }
