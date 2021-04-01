@@ -76,12 +76,14 @@ textarea:focus {
 .cancel-button {
   background-color: #b6b6b6;
   border: 1px solid #b6b6b6;
+  margin-bottom: 1.08rem;
 }
 
 .confirm-button {
   background-color: #dc2626;
   border: 1px solid #dc2626;
   color: white;
+  margin-bottom: 1.08rem;
 }
 
 .delete-entry,
@@ -111,7 +113,7 @@ textarea:focus {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1.45rem;
+  margin: 0 1.1rem;
 }
 
 header {
@@ -147,9 +149,35 @@ header {
 
 .modal-container {
   background-color: #fff;
-  display: flex;
-  justify-content: space-around;
   margin: 0 auto;
   padding: 0 1.5rem;
-  max-width: 576px;
+  border-radius: 0.25rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.modal-text {
+  margin-top: 3rem;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.delete-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
 }

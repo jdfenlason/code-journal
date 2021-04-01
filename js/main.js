@@ -9,8 +9,6 @@ var $viewEntryForm = document.querySelector('.view-entry-form');
 var $viewEntries = document.querySelector('.entries-view');
 var $newUlEntries = document.querySelector('.list-entries');
 var $formheader = document.querySelector('.form-header');
-var $journalNode = document.querySelectorAll('.journal-entry');
-
 var dataEntryId = null;
 var $deleteEntryBtn = document.querySelector('.delete-entry');
 var $viewModal = document.querySelector('.view-modal');
@@ -55,6 +53,7 @@ function saveEntry(event) {
     for (var x = 0; x < data.entries.length; x++) {
       if (data.entries[x].entryId === data.editing.entryId) {
         data.entries[x] = data.editing;
+        var $journalNode = document.querySelectorAll('.journal-entry');
         var editEntryItem = createEntry(data.editing);
         $journalNode[x].replaceWith(editEntryItem);
       }
@@ -118,6 +117,7 @@ function entryLoad(event) {
 function viewEntryForm(event) {
   $viewEntryForm.className = 'view-entry-form';
   $viewEntries.className = ' hidden entries-view';
+  $deleteEntryBtn.className = 'hidden delete-entry';
   data.view = 'entry-form';
   $formheader.textContent = 'New Entry';
   data.editing = null;
@@ -127,7 +127,7 @@ function viewEntries(event) {
   $viewEntryForm.className = 'hidden view-entry-form';
   $viewEntries.className = 'entries-view';
   $viewModal.className = 'hidden view-modal';
-  $deleteEntryBtn.className = 'hidden';
+  $deleteEntryBtn.className = 'hidden delete-entry';
   data.view = 'entries';
   $newEntry.reset();
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
@@ -138,6 +138,7 @@ function viewEditForm(event) {
   $viewEntryForm.className = 'view-entry-form';
   $viewEntries.className = 'hidden entries-view';
   $formheader.textContent = 'Edit Entry';
+  $deleteEntryBtn.className = 'delete-entry';
 }
 
 function editEntry(event) {
@@ -171,9 +172,10 @@ $confirmbutton.addEventListener('click', function (event) {
     if (data.entries[x].entryId.toString() === dataEntryId) {
       data.entries.splice(x, 1);
     }
-    for (var i = 0; i < $journalNode.length; i++) {
-      if ($journalNode[i].getAttribute('data-entry-id') === dataEntryId) {
-        $journalNode[i].remove();
+    var $li = document.querySelectorAll('li');
+    for (var i = 0; i < $li.length; i++) {
+      if ($li[i].getAttribute('data-entry-id') === dataEntryId) {
+        $li[i].remove();
       }
     }
   }
