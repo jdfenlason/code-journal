@@ -14,6 +14,7 @@ var $deleteEntryBtn = document.querySelector('.delete-entry');
 var $viewModal = document.querySelector('.view-modal');
 var $cancelbutton = document.querySelector('.cancel-button');
 var $confirmbutton = document.querySelector('.confirm-button');
+
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
@@ -45,7 +46,7 @@ function saveEntry(event) {
     userInput.entryId = data.nextEntryId;
     data.nextEntryId++;
     var newNode = createEntry(data.entries[0]);
-    $newUlEntries.append(newNode);
+    $newUlEntries.prepend(newNode);
   } else {
     data.editing.title = $newEntry.elements.title.value;
     data.editing.photo = $newEntry.elements.photo.value;
@@ -117,9 +118,9 @@ function entryLoad(event) {
 function viewEntryForm(event) {
   $viewEntryForm.className = 'view-entry-form';
   $viewEntries.className = ' hidden entries-view';
-  $deleteEntryBtn.className = 'hidden delete-entry';
   data.view = 'entry-form';
   $formheader.textContent = 'New Entry';
+  $deleteEntryBtn = 'invisible delete-entry';
   data.editing = null;
 }
 
