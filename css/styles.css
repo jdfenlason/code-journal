@@ -1,7 +1,7 @@
 body {
   background-color: #eceaec;
   font-family: "Open Sans", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .header-container {
@@ -11,21 +11,27 @@ body {
 }
 
 label,
+h1,
+h2 {
+  font-family: "Proza Libre", sans-serif;
+}
+
+.post-title {
+  margin-block-start: 0;
+  margin-inline-start: 0;
+}
+
 input,
 textarea {
   border-radius: 0.25rem;
   margin-bottom: 0.65rem;
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
+  border: 1px solid #b6b6b6;
 }
 
 input {
   height: 2rem;
-}
-
-input,
-textarea {
-  border: 1px solid #b6b6b6;
 }
 
 input:focus,
@@ -41,7 +47,6 @@ textarea:focus {
 
 .image-url {
   width: 100%;
-  object-fit: cover;
 }
 
 
@@ -57,14 +62,13 @@ textarea:focus {
   background-color: #562b81;
   color: white;
   width: 5.25rem;
-  padding-top: 0.35rem;
-  padding-bottom: 0.35rem;
-  font-family: "Open Sans", sans-serif;
-  border-radius: 0.3rem;
   font-size: 1em;
   margin-top: 0.85rem;
 
+  border: 1px #562b81 solid;
+
   border: 1px  #562b81 solid;
+
 }
 
 .fas {
@@ -72,6 +76,42 @@ textarea:focus {
   font-size: 1.5rem;
 }
 
+.delete-entry {
+  background-color: #eceaec;
+  text-decoration: underline;
+  color: #dc2626;
+  border: none;
+}
+
+.cancel-button {
+  background-color: #b6b6b6;
+  border: 1px solid #b6b6b6;
+  margin-bottom: 1.08rem;
+}
+
+.confirm-button {
+  background-color: #dc2626;
+  border: 1px solid #dc2626;
+  color: white;
+  margin-bottom: 1.08rem;
+}
+
+.delete-entry,
+.new-button,
+.save-btn,
+.confirm-button,
+.cancel-button {
+  font-family: "Open Sans", sans-serif;
+  border-radius: 0.3rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.confirm-button:hover,
+.cancel-button:hover,
+.delete-entry:hover,
 .fas:hover,
 .new-button:hover,
 .save-btn:hover {
@@ -81,8 +121,9 @@ textarea:focus {
 .column-full.form-submit {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 1.45rem;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.1rem;
 }
 
 header {
@@ -94,7 +135,10 @@ header {
   display: flex;
   flex-direction: column;
 
+
+
   margin: 0 auto;
+
   padding: 0 1.5rem;
 }
 
@@ -115,7 +159,47 @@ header {
 .entry-header {
   display: flex;
   justify-content: space-between;
+}
+
+.modal-container {
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  border-radius: 0.25rem;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-text {
+  margin: 3rem 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.delete-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
   align-items: center;
+  position: absolute;
+  z-index: 5;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.journal-entry {
+  margin: 1rem 0;
 }
 
   max-width: 685px;
