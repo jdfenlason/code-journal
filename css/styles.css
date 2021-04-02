@@ -12,6 +12,7 @@ body {
   background-color: #562b81;
   color: white;
   width: 100%;
+  min-width: 660px;
   margin: 0 auto;
 }
 

@@ -206,9 +206,17 @@ $searchInput.addEventListener('keyup', function (event) {
 });
 
 // function doesStuff(event) {
-//   for (var i = 0; i < data.entries.length; i++) {
-//     data.entries[i].title.toLowerCase();
-//     titles.push(data.entries[i].title);
+//   //   for (var i = 0; i < data.entries.length; i++) {
+//   //     data.entries[i].title.toLowerCase();
+//   //     titles.push(data.entries[i].title);
+//   //   }
+//   //   return titles;
+//   //
+//   var $li = document.querySelectorAll('li');
+//   for (var i = 0; i < $li.length; i++) {
+//     if ($li[i].getAttribute('data-entry-id') === dataEntryId) {
+//       console.log($li.getAttribute('data-entry-id'));
+//     }
 //   }
-//   return titles;
 // }
+// doesStuff();
