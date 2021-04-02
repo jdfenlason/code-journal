@@ -17,7 +17,7 @@ var $confirmbutton = document.querySelector('.confirm-button');
 // var $searchIcon = document.querySelector(".search-bar");
 var $searchInput = document.querySelector('#user-search');
 // var $searchBtn = document.querySelector(".enter-search");
-var titles = [];
+// var titles = [];
 
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
@@ -202,10 +202,13 @@ $confirmbutton.addEventListener('click', function (event) {
 });
 
 $searchInput.addEventListener('keyup', function (event) {
-  var searchString = event.target.value.toLowerCase();
-  for (var i = 0; i < data.entries.length; i++) {
-    if (data.entries[i].title.toLowerCase() === searchString) {
-      titles.push(data.entries[i].title);
-    }
-  } return titles;
+  // var searchString = event.target.value.toLowerCase();
 });
+
+// function doesStuff(event) {
+//   for (var i = 0; i < data.entries.length; i++) {
+//     data.entries[i].title.toLowerCase();
+//     titles.push(data.entries[i].title);
+//   }
+//   return titles;
+// }
