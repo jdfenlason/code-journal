@@ -7,7 +7,6 @@ body {
 .nav-bar {
   padding-left: 0.75rem;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   background-color: #562b81;
   color: white;

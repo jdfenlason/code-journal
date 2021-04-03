@@ -202,21 +202,17 @@ $confirmbutton.addEventListener('click', function (event) {
 });
 
 $searchInput.addEventListener('keyup', function (event) {
-  // var searchString = event.target.value.toLowerCase();
+  var searchString = event.target.value.toLowerCase();
+  var $li = document.querySelectorAll('li');
+  for (var x = 0; x < data.entries.length; x++) {
+    if (
+      data.entries[x].title.toLowerCase().includes(searchString) === true ||
+      data.entries[x].notes.toLowerCase().includes(searchString) === true
+    ) {
+      $li[x].getAttribute('data-entry-id');
+      $li[x].className = 'journal-entry';
+    } else {
+      $li[x].className = 'journal-entry hidden';
+    }
+  }
 });
-
-// function doesStuff(event) {
-//   //   for (var i = 0; i < data.entries.length; i++) {
-//   //     data.entries[i].title.toLowerCase();
-//   //     titles.push(data.entries[i].title);
-//   //   }
-//   //   return titles;
-//   //
-//   var $li = document.querySelectorAll('li');
-//   for (var i = 0; i < $li.length; i++) {
-//     if ($li[i].getAttribute('data-entry-id') === dataEntryId) {
-//       console.log($li.getAttribute('data-entry-id'));
-//     }
-//   }
-// }
-// doesStuff();
