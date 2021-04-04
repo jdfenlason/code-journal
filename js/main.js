@@ -16,6 +16,7 @@ var $cancelbutton = document.querySelector('.cancel-button');
 var $confirmbutton = document.querySelector('.confirm-button');
 var $searchInput = document.querySelector('#user-search');
 
+$confirmbutton.addEventListener('click', confirmDelete);
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
@@ -23,6 +24,8 @@ $navAnchor.addEventListener('click', viewEntries);
 $newUlEntries.addEventListener('click', editEntry);
 window.addEventListener('DOMContentLoaded', entryLoad);
 $deleteEntryBtn.addEventListener('click', deletModalView);
+$searchInput.addEventListener('keyup', searchInput);
+$cancelbutton.addEventListener('click', hideModal);
 
 if (data.view === 'entry-form') {
   $viewEntryForm.className = 'view-entry-form';
@@ -165,11 +168,11 @@ function deletModalView(event) {
   $viewModal.className = 'view-modal';
 }
 
-$cancelbutton.addEventListener('click', function (event) {
+function hideModal(event) {
   $viewModal.className = 'hidden view-modal';
-});
+}
 
-$confirmbutton.addEventListener('click', function (event) {
+function confirmDelete(event) {
   for (var x = 0; x < data.entries.length; x++) {
     if (data.entries[x].entryId.toString() === dataEntryId) {
       data.entries.splice(x, 1);
@@ -185,9 +188,9 @@ $confirmbutton.addEventListener('click', function (event) {
   $newEntry.reset();
   data.editing = null;
   viewEntries();
-});
+}
 
-$searchInput.addEventListener('keyup', function (event) {
+function searchInput(event) {
   var searchString = event.target.value.toLowerCase();
   var $li = document.querySelectorAll('li');
   for (var x = 0; x < data.entries.length; x++) {
@@ -201,4 +204,4 @@ $searchInput.addEventListener('keyup', function (event) {
       $li[x].className = 'journal-entry hidden';
     }
   }
-});
+}
