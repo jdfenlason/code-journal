@@ -42,15 +42,12 @@
     </div>
 
     <main>
-        <div class="row">
-          <div class="nav-bar">
-            <h2>Code Journal</h2>
-            <a href="" class="entries-nav-link">Entries</a>
-
-          </div>
-          </div>
-
-
+      <div class="row">
+        <div class="nav-bar">
+          <h2>Code Journal</h2>
+          <a href="" class="entries-nav-link">Entries</a>
+        </div>
+      </div>
 
       <div class="form-container">
         <div class="view-entry-form" data-view="entry-form">
@@ -96,12 +93,23 @@
         </div>
         <div class="entries-view" data-view="entries">
           <div class="form-container">
-            <div class="column-full row search-header">
-              <h1>Entries</h1>
-              <span> <i class="fas fa-search"></i>
-              <input required name="search" type="text" id="user-search" placeholder="search entries..." />
-</span>
-              <a href=""> <button class="new-button">NEW</button> </a>
+            <div class="row">
+              <div class="column-full">
+                <div class="search-header">
+                  <h2>Entries</h2>
+                  <div class="icon-container">
+                    <i class="fas fa-search"></i>
+                    <input
+                    required
+                    name="search"
+                    type="text"
+                    id="user-search"
+                    placeholder="Search entries..."
+                    />
+                  </div>
+                  <a href=""> <button class="new-button">NEW</button> </a>
+                </div>
+              </div>
             </div>
             <ul class="list-entries"></ul>
           </div>

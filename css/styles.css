@@ -5,14 +5,12 @@ body {
 }
 
 .nav-bar {
-  padding-left: 0.75rem;
+  padding-left: 3rem;
   display: flex;
   align-items: center;
   background-color: #562b81;
   color: white;
   width: 100%;
-  min-width: 660px;
-  margin: 0 auto;
 }
 
 label,
@@ -61,14 +59,6 @@ textarea:focus {
   font-size: 1.2em;
 }
 
-.enter-search {
-  background-color: #fff;
-  color: #562b81;
-  border: 1px solid white;
-  width: 5.25rem;
-  margin-top: 0.85rem;
-}
-
 .new-button,
 .save-btn {
   background-color: #562b81;
@@ -80,15 +70,18 @@ textarea:focus {
 
 .save-btn {
   margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
 }
 
-.fas {
+.fa-pen {
   color: #562b81;
   font-size: 1.5rem;
 }
 
 .fa-search {
   color: #562b81;
+  text-align: left;
+  padding: 0.5rem;
 }
 
 .delete-entry {
@@ -111,7 +104,6 @@ textarea:focus {
   margin-bottom: 1.08rem;
 }
 
-.enter-search,
 .delete-entry,
 .new-button,
 .save-btn,
@@ -125,13 +117,16 @@ textarea:focus {
   font-weight: 600;
 }
 
-.enter-search,
 .confirm-button:hover,
 .cancel-button:hover,
 .delete-entry:hover,
-.fas:hover,
 .new-button:hover,
 .save-btn:hover {
+  cursor: pointer;
+  background: rgba(43, 2, 49, 0.2);
+}
+
+.fa-pen:hover {
   cursor: pointer;
 }
 
@@ -149,6 +144,20 @@ textarea:focus {
   padding: 0 1.5rem;
 }
 
+.icon-container > i {
+  position: absolute;
+}
+
+.icon-container > input {
+  padding-left: 3rem;
+  margin: 0;
+}
+
+.icon-container {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
 .list-entries {
   list-style: none;
   padding-bottom: 1.15rem;
@@ -157,9 +166,11 @@ textarea:focus {
 }
 
 .search-header {
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
 .entry-header {

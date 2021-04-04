@@ -14,29 +14,15 @@ var $deleteEntryBtn = document.querySelector('.delete-entry');
 var $viewModal = document.querySelector('.view-modal');
 var $cancelbutton = document.querySelector('.cancel-button');
 var $confirmbutton = document.querySelector('.confirm-button');
-// var $searchIcon = document.querySelector(".search-bar");
 var $searchInput = document.querySelector('#user-search');
-// var $searchBtn = document.querySelector(".enter-search");
-// var titles = [];
 
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
 $navAnchor.addEventListener('click', viewEntries);
 $newUlEntries.addEventListener('click', editEntry);
-// $searchIcon.addEventListener("click", openSearch);
-// $searchBtn.addEventListener('click', goSearch);
-
 window.addEventListener('DOMContentLoaded', entryLoad);
 $deleteEntryBtn.addEventListener('click', deletModalView);
-
-// function openSearch(event) {
-//   $searchInput.className = "active";
-// }
-
-// function goSearch(event) {
-//   searching();
-// }
 
 if (data.view === 'entry-form') {
   $viewEntryForm.className = 'view-entry-form';
