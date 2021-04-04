@@ -52,6 +52,7 @@ textarea:focus {
   width: 100%;
 }
 
+
 .entries-nav-link {
   color: white;
   text-decoration: none;
@@ -65,7 +66,15 @@ textarea:focus {
   color: white;
   width: 5.25rem;
   font-size: 1em;
+
+
+  margin-top: 0.85rem;
+
+
   border: 1px #562b81 solid;
+
+  border: 1px  #562b81 solid;
+
 }
 
 .save-btn {
@@ -141,6 +150,11 @@ textarea:focus {
 .form-container {
   display: flex;
   flex-direction: column;
+
+
+
+  margin: 0 auto;
+
   padding: 0 1.5rem;
 }
 
@@ -172,6 +186,7 @@ textarea:focus {
   padding-bottom: 1rem;
   width: 100%;
 }
+
 
 .entry-header {
   display: flex;
@@ -218,3 +233,9 @@ textarea:focus {
 .journal-entry {
   margin: 1rem 0;
 }
+
+  max-width: 685px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+

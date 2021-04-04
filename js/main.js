@@ -1,3 +1,4 @@
+
 /* global data */
 /* exported data */
 var $imageUrl = document.querySelector('.image-url');
@@ -65,8 +66,14 @@ function saveEntry(event) {
     }
   }
   $imageUrl.setAttribute('src', 'images/placeholder-image-square.jpg');
+
   $newEntry.reset();
   data.editing = null;
+
+
+  var newNode = createEntry(data.entries[0]);
+  $newUlEntries.prepend(newNode);
+
   viewEntries();
 }
 
@@ -146,6 +153,7 @@ function viewEditForm(event) {
   $deleteEntryBtn.className = 'delete-entry';
 }
 
+
 function editEntry(event) {
   if (event.target.matches('i')) {
     viewEditForm();
@@ -162,6 +170,7 @@ function editEntry(event) {
     }
   }
 }
+
 
 function deletModalView(event) {
   event.preventDefault();
@@ -188,6 +197,7 @@ function confirmDelete(event) {
   $newEntry.reset();
   data.editing = null;
   viewEntries();
+
 }
 
 function searchInput(event) {
@@ -205,3 +215,14 @@ function searchInput(event) {
     }
   }
 }
+
+});
+
+window.addEventListener('DOMContentLoaded', entryLoad);
+
+
+$newEntry.addEventListener('submit', saveEntry);
+
+
+
+
