@@ -4,10 +4,13 @@ body {
   font-weight: 600;
 }
 
-.header-container {
+.nav-bar {
+  padding-left: 3rem;
   display: flex;
   align-items: center;
-  margin-left: 3rem;
+  background-color: #562b81;
+  color: white;
+  width: 100%;
 }
 
 label,
@@ -63,7 +66,10 @@ textarea:focus {
   color: white;
   width: 5.25rem;
   font-size: 1em;
+
+
   margin-top: 0.85rem;
+
 
   border: 1px #562b81 solid;
 
@@ -71,9 +77,20 @@ textarea:focus {
 
 }
 
-.fas {
+.save-btn {
+  margin-top: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.fa-pen {
   color: #562b81;
   font-size: 1.5rem;
+}
+
+.fa-search {
+  color: #562b81;
+  text-align: left;
+  padding: 0.5rem;
 }
 
 .delete-entry {
@@ -112,9 +129,13 @@ textarea:focus {
 .confirm-button:hover,
 .cancel-button:hover,
 .delete-entry:hover,
-.fas:hover,
 .new-button:hover,
 .save-btn:hover {
+  cursor: pointer;
+  background: rgba(43, 2, 49, 0.2);
+}
+
+.fa-pen:hover {
   cursor: pointer;
 }
 
@@ -124,11 +145,6 @@ textarea:focus {
   justify-content: space-between;
   align-items: center;
   margin: 0 1.1rem;
-}
-
-header {
-  background-color: #562b81;
-  color: white;
 }
 
 .form-container {
@@ -142,6 +158,20 @@ header {
   padding: 0 1.5rem;
 }
 
+.icon-container > i {
+  position: absolute;
+}
+
+.icon-container > input {
+  padding-left: 3rem;
+  margin: 0;
+}
+
+.icon-container {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
 .list-entries {
   list-style: none;
   padding-bottom: 1.15rem;
@@ -149,10 +179,12 @@ header {
   padding-left: 0;
 }
 
-.entries-header {
+.search-header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
 

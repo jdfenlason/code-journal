@@ -15,7 +15,9 @@ var $deleteEntryBtn = document.querySelector('.delete-entry');
 var $viewModal = document.querySelector('.view-modal');
 var $cancelbutton = document.querySelector('.cancel-button');
 var $confirmbutton = document.querySelector('.confirm-button');
+var $searchInput = document.querySelector('#user-search');
 
+$confirmbutton.addEventListener('click', confirmDelete);
 $userPhotoUrl.addEventListener('input', entryImageUpdate);
 $newEntry.addEventListener('submit', saveEntry);
 $newEntryBtn.addEventListener('click', viewEntryForm);
@@ -23,6 +25,8 @@ $navAnchor.addEventListener('click', viewEntries);
 $newUlEntries.addEventListener('click', editEntry);
 window.addEventListener('DOMContentLoaded', entryLoad);
 $deleteEntryBtn.addEventListener('click', deletModalView);
+$searchInput.addEventListener('keyup', searchInput);
+$cancelbutton.addEventListener('click', hideModal);
 
 if (data.view === 'entry-form') {
   $viewEntryForm.className = 'view-entry-form';
@@ -173,11 +177,11 @@ function deletModalView(event) {
   $viewModal.className = 'view-modal';
 }
 
-$cancelbutton.addEventListener('click', function (event) {
+function hideModal(event) {
   $viewModal.className = 'hidden view-modal';
-});
+}
 
-$confirmbutton.addEventListener('click', function (event) {
+function confirmDelete(event) {
   for (var x = 0; x < data.entries.length; x++) {
     if (data.entries[x].entryId.toString() === dataEntryId) {
       data.entries.splice(x, 1);
@@ -193,12 +197,32 @@ $confirmbutton.addEventListener('click', function (event) {
   $newEntry.reset();
   data.editing = null;
   viewEntries();
+
+}
+
+function searchInput(event) {
+  var searchString = event.target.value.toLowerCase();
+  var $li = document.querySelectorAll('li');
+  for (var x = 0; x < data.entries.length; x++) {
+    if (
+      data.entries[x].title.toLowerCase().includes(searchString) === true ||
+      data.entries[x].notes.toLowerCase().includes(searchString) === true
+    ) {
+      $li[x].getAttribute('data-entry-id');
+      $li[x].className = 'journal-entry';
+    } else {
+      $li[x].className = 'journal-entry hidden';
+    }
+  }
+}
+
 });
 
 window.addEventListener('DOMContentLoaded', entryLoad);
 
 
 $newEntry.addEventListener('submit', saveEntry);
+
 
 
 
