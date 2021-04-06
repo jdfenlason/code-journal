@@ -46,6 +46,7 @@ function saveEntry(event) {
     userInput.title = $newEntry.elements.title.value;
     userInput.photo = $newEntry.elements.photo.value;
     userInput.notes = $newEntry.elements.notes.value;
+    userInput.date = new Date();
     data.entries.unshift(userInput);
     userInput.entryId = data.nextEntryId;
     data.nextEntryId++;
@@ -205,3 +206,34 @@ function searchInput(event) {
     }
   }
 }
+// function Today(event) {
+//   var dateString = '';
+//   for (var i = 0; i < data.entries.length; i++) {
+//     dateString =
+//     data.entries[i].date.getDate().toString() +
+//       '/' +
+//       data.entries[i].date.getMonth().toString() +
+//       '/' +
+//       data.entries[i].date.getFullYear().toString();
+//   }
+//   return dateString;
+// }
+
+// // return dateString;
+// // data.entries[0].getDate();
+
+// data.entries[0].date.getDate();
+// data.entries[0].date.getMonth();
+// data.entries[0].date.getFullYear();
+
+// data.entries[0].date.getDate().toString() +
+//   "/" +
+//   data.entries[0].date.getMonth().toString() +
+//   "/" +
+//   data.entries[0].date.getFullYear().toString();
+
+// data.entries[1].date.getDate().toString() +
+//   "/" +
+//   data.entries[1].date.getMonth().toString() +
+//   "/" +
+//   data.entries[1].date.getFullYear().toString();
