@@ -46,7 +46,7 @@ function saveEntry(event) {
     userInput.title = $newEntry.elements.title.value;
     userInput.photo = $newEntry.elements.photo.value;
     userInput.notes = $newEntry.elements.notes.value;
-    userInput.date = Date();
+    userInput.date = new Date().toLocaleDateString();
     data.entries.unshift(userInput);
     userInput.entryId = data.nextEntryId;
     data.nextEntryId++;
@@ -206,11 +206,10 @@ function searchInput(event) {
     }
   }
 }
-function dateToday(event) {
-  var dateString = '';
-  for (var i = 0; i < data.entries.length; i++) {
-    dateString = data.entries[i].date.slice(4, 15);
-  }
-  return dateString;
+
+function convertDate(string) {
+  var convert = string.split('/');
+  return Number(convert[0] + convert[1] + convert[2]);
 }
-dateToday();
+
+convertDate();
