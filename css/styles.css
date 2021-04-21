@@ -10,6 +10,7 @@ body {
   align-items: center;
   background-color: #562b81;
   color: white;
+  min-width: 500px;
   width: 100%;
 }
 
@@ -218,11 +219,4 @@ textarea:focus {
 
 .journal-entry {
   margin: 1rem 0;
-}
-
-.date-line {
-  border-bottom: 1px solid black;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
 }

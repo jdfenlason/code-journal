@@ -197,7 +197,8 @@ function searchInput(event) {
   for (var x = 0; x < data.entries.length; x++) {
     if (
       data.entries[x].title.toLowerCase().includes(searchString) === true ||
-      data.entries[x].notes.toLowerCase().includes(searchString) === true
+      data.entries[x].notes.toLowerCase().includes(searchString) === true ||
+      data.entries[x].date.includes(searchString) === true
     ) {
       $li[x].getAttribute('data-entry-id');
       $li[x].className = 'journal-entry';
@@ -206,10 +207,3 @@ function searchInput(event) {
     }
   }
 }
-
-function convertDate(string) {
-  var convert = string.split('/');
-  return Number(convert[0] + convert[1] + convert[2]);
-}
-
-convertDate();
